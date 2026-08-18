@@ -1183,8 +1183,8 @@ class Component extends DCLogic {
       this.qa(sel).forEach((el, i) => {
         const isSig = el.hasAttribute('data-signature');
         el.style.opacity = '0';
-        el.style.transform = isSig ? 'translateX(calc(-40*var(--u)))' : 'translateY(calc(18*var(--u)))';
-        el.style.transition = isSig ? 'opacity 1s ease, transform 1s cubic-bezier(.22,1,.36,1)' : 'opacity .9s ease, transform .9s cubic-bezier(.22,1,.36,1)';
+        el.style.transform = isSig ? 'translateX(calc(-40*var(--u)))' : 'translateY(calc(34*var(--u)))';
+        el.style.transition = isSig ? 'opacity 1s ease, transform 1s cubic-bezier(.22,1,.36,1)' : 'opacity 1.05s ease, transform 1.05s cubic-bezier(.22,1,.36,1)';
         items.push({el: el, delay: i * stagger, fade: false});
       });
     });
@@ -1201,7 +1201,7 @@ class Component extends DCLogic {
       const vh = window.innerHeight;
       for(let k = items.length - 1; k >= 0; k--){
         const it = items[k], b = it.el.getBoundingClientRect();
-        if(b.top < vh * .92 && b.bottom > vh * .04){
+        if(b.top < vh * .84 && b.bottom > vh * .04){
           it.el.style.transitionDelay = it.delay + 'ms';
           it.el.style.opacity = '1';
           if(!it.fade) it.el.style.transform = 'none';
